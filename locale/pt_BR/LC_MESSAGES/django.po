@@ -1,0 +1,161 @@
+# BRAZILIAN PORTUGUESE TRANSLATION.
+# Copyright (C) 2009.
+# This file is distributed under the same license as the SANSPLANET package.
+# Og Maciel <ogmaciel@gnome.org>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-03-06 09:18-0500\n"
+"PO-Revision-Date: 2009-03-06 09:21-0500\n"
+"Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
+"Language-Team: Brazilian Portuguese <LDP-Br@bazar2.conectiva.com.br>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: planeta/models.py:21
+msgid "Network Name"
+msgstr "Nome da rede"
+
+#: planeta/models.py:27
+msgid "User Name"
+msgstr "Nome de usuário"
+
+#: planeta/models.py:34
+msgid "Network URL"
+msgstr "URL da rede"
+
+#: planeta/models.py:40
+msgid "Network Icon"
+msgstr "Ícone da rede"
+
+#: planeta/models.py:55
+msgid "Author Name"
+msgstr "Nome do autor"
+
+#: planeta/models.py:61
+msgid "Email"
+msgstr "E-mail"
+
+#: planeta/models.py:66
+msgid "Avatar"
+msgstr "Avatar"
+
+#: planeta/models.py:70
+msgid "URL to an image file (.jpg, .png, ...) of a hackergotchi"
+msgstr "URL de um arquivo de imagem (.jpg, .png, ...) de um hackergotchi"
+
+#: planeta/models.py:90
+msgid "Feed Title"
+msgstr "Título da fonte de notícias"
+
+#: planeta/models.py:96
+msgid "Site URL"
+msgstr "URL do site"
+
+#: planeta/models.py:98
+msgid "URL for the web site"
+msgstr "URL para o web site"
+
+#: planeta/models.py:102
+msgid "Feed URL"
+msgstr "URL da fonte de notícias"
+
+#: planeta/models.py:104
+msgid "URL for the news feed"
+msgstr "URL para a fonte de notícias"
+
+#: planeta/models.py:109
+msgid "If disabled, this feed will not longer be updated."
+msgstr "Se desabilitado, esta fonte de notícias não será mais atualizada."
+
+#: planeta/models.py:137
+msgid "Title"
+msgstr "Título"
+
+#: planeta/models.py:141
+msgid "Link"
+msgstr "Link"
+
+#: planeta/models.py:144
+msgid "Content"
+msgstr "Conteudo"
+
+#: planeta/models.py:149
+msgid "Date Modified"
+msgstr "Data modificada"
+
+#: planeta/models.py:155
+msgid "GUID"
+msgstr "GUID"
+
+#: planeta/models.py:161
+msgid "Comments"
+msgstr "Comentários"
+
+#: planeta/models.py:167
+msgid "Date Created"
+msgstr "Data de criação"
+
+#~ msgid "Change language"
+#~ msgstr "Mudar o idioma"
+
+#~ msgid "HOME"
+#~ msgstr "HOME"
+
+#~ msgid "ARCHIVES"
+#~ msgstr "ARQUIVOS"
+
+#~ msgid "CONTACT"
+#~ msgstr "CONTATO"
+
+#~ msgid "TAGS"
+#~ msgstr "ETIQUETAS"
+
+#~ msgid "AUTHORS"
+#~ msgstr "AUTORES"
+
+#~ msgid "Search"
+#~ msgstr "Pesquisar"
+
+#~ msgid "About"
+#~ msgstr "Sobre"
+
+#~ msgid "Colaborators"
+#~ msgstr "Colaboradores"
+
+#~ msgid "Follow us on Twitter"
+#~ msgstr "Nos acompanhe pelo Twitter"
+
+#~ msgid "Welcome,"
+#~ msgstr "Bem-vindo,"
+
+#~ msgid "Documentation"
+#~ msgstr "Documentação"
+
+#~ msgid "Change password"
+#~ msgstr "Mudar a senha"
+
+#~ msgid "Log out"
+#~ msgstr "Desconectar"
+
+#~ msgid "Home"
+#~ msgstr "Home"
+
+#~ msgid "SansPlanet site admin"
+#~ msgstr "Administração do SansPlanet"
+
+#~ msgid "Planet administration"
+#~ msgstr "Administração do Planeta"
+
+#~ msgid "Read More"
+#~ msgstr "Leia mais"
+
+#~ msgid "Newer entries"
+#~ msgstr "Entras mais recentes"
+
+#~ msgid "Older entries"
+#~ msgstr "Entradas mais antigas"
