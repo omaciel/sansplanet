@@ -30,7 +30,6 @@ def process_feed(feed):
 
     channel = fetch_feed(feed)
 
-    import epdb; epdb.st()
     if feed.etag == channel.etag or channel.status == 304:
         print "Feed has not changed since we last checked."
         return None
