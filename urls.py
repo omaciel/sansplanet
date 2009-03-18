@@ -23,17 +23,6 @@ post = {'queryset': Post.objects.all(),
         'template_name': 'planeta/single_article.html',
 }
 
-page = {'queryset': Post.objects.all(),
-        'paginate_by': settings.PAGINATE_BY,
-        'template_name': 'planeta/index.html',
-}
-
-archive_dict = {'queryset': Post.objects.all(),
-        'date_field': 'date_modified',
-        'make_object_list': True,
-        'template_name': 'planeta/archives.html',
-}
-
 urlpatterns = patterns('',
     url(r'^admin/(.*)', admin.site.root),
     url(r'^post/$', object_list, posts, name='posts'),
