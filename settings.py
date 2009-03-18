@@ -88,7 +88,10 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_DIR, 'templates'),
 )
 
-TEMPLATE_CONTEXT_PROCESSORS = ('planeta.context_processors.sansplanet_info',)
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.auth',
+    'planeta.context_processors.sansplanet_info',
+)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
