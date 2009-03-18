@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block main_content %}
+	<div id="main_content">
+	
+	<div class="session">
+        <h2 class="title">{% trans "Archives" %}</h2>
+        <p>{% trans "See our older news" %}</p>
+	</div><!--end session-->
+	
+    {% for date in date_list %}
+    <h2 class="date">{{ date|date:"F" }}</h2>
+    <ul class="arquives">
+        {% for post in object_list %}
+        {% ifequal post.date_modified.month date.month %}
+        <li class="article">
+        <h2><a href="#">{{ post.title }}</a></h2>
+        <p>{{ post.content|safe|truncatewords_html:"50" }}</p>
+        <p class="more"><a href="/post/{{ post.id }}">{% trans "Read More" %}</a></p>
+        </li>
+        {% endifequal %}
+    {% endfor %}
+</ul><!--archives-->
+{% endfor %}
+</div><!--end main_content-->
+{% endblock %}

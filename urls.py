@@ -38,11 +38,11 @@ urlpatterns = patterns('',
     url(r'^admin/(.*)', admin.site.root),
     url(r'^post/$', object_list, posts, name='posts'),
     url(r'^post/(?P<object_id>\d+)/$', object_detail, post, name='post'),
-    url(r'^$', object_list, page),
-    url(r'^page/(?P<page>[0-9]+)/$', object_list, page),
+    url(r'^$', 'planeta.views.post_list', name='home'),
+    url(r'^page/(?P<page>[0-9]+)/$', 'planeta.views.post_list'),
     url(r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': feeds}),
     (r'^i18n/', include('django.conf.urls.i18n')),
-    url(r'^archives/(?P<year>\d{4})/$', archive_year, archive_dict, name='archives'),
+    url(r'^archives/?(?P<year>\d{4})?/?$', 'planeta.views.post_archive_year', name='archives'),
 )
 
 if settings.DEBUG:
