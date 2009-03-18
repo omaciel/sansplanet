@@ -2,30 +2,46 @@
 {% load i18n %}
 {% block main_content %}
 
-   <div id="main_content">
+    <div id="main_content">
 
     {% if object_list %}
 
-        {% for post in object_list %}
-        <ul id="article_list">
+        {% for post in object_list|slice:":1" %}
 
-            {% if forloop.first and not page_obj.has_previous %}
-            <li id="featured_article">
+            <div id="featured_article">
                 <h2><a href="#">{{ post.title|upper }}</a></h2>
                 <p>{{ post.content|safe|truncatewords_html:"140" }}</p>
                 <p class="more"><a href="/post/{{ post.id }}">{% trans "Read More" %}</a></p>
-            </li>
-            {% else %} 
-            <li class="article">
-                <h2><a href="#">{{ post.title|upper }}</a></h2>
-                <p>{{ post.content|safe|truncatewords_html:"50" }}</p>
-                <p class="more"><a href="/post/{{ post.id }}">{% trans "Read More" %}</a></p>
-            </li>
-            {% endif %}
+            </div>
         {% endfor %}
-        </ul><!--end featured_article-->
+
+        <div id="col_1">
+            <ul id="articles_list">
+                {% for post in object_list|slice:"1:6" %}
+                    <li class="article">
+                        <h2><a href="#">{{ post.title|upper }}</a></h2>
+                        <p>{{ post.content|safe|truncatewords_html:"50" }}</p>
+                        <p class="more"><a href="/post/{{ post.id }}">{% trans "Read More" %}</a></p>
+                    </li>
+                {% endfor %}
+
+            </ul><!-- end article_list-->
+        </div><!-- col_1 -->
+
+        <div id="col_2">
+            <ul id="old_articles_list">
+                {% for post in object_list|slice:"7:" %}
+                    <li class="article">
+                        <h3><a href="#">{{ post.title|upper }}</a></h3>
+                        <p>{{ post.content|safe|truncatewords_html:"50" }}</p>
+                        <p class="more"><a href="/post/{{ post.id }}">{% trans "Read More" %}</a></p>
+                    </li>
+                {% endfor %}
+            </ul><!-- end old_article_list-->
+        </div><!-- col_2 -->
+
     {% endif %}
-    
+
     {% if is_paginated %}
         <div class="pagination">
             {% if page_obj.has_previous %}
@@ -36,6 +52,8 @@
             {% endif %}
         </div>
     {% endif %}
+
     </div><!--end main_content-->
+
 
 {% endblock %}
