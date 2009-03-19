@@ -8,31 +8,20 @@ from django.shortcuts import render_to_response
 
 from models import Post
 
-def post_list(request, page=0):
+def post_list(request, page=0, *args, **kwargs):
+    kwargs['paginate_by'] = settings.PAGINATE_BY
+    kwargs['page'] = page
+    kwargs['queryset'] = Post.objects.all()
+
+    return list_detail.object_list(request, *args, **kwargs)
+
+def post_archive_year(request, year=None, *args, **kwargs):
     posts = Post.objects.all()
 
-    return list_detail.object_list(
-        request = request,
-        queryset = Post.objects.all(),
-        paginate_by = settings.PAGINATE_BY,
-        page = page,
-        #context_instance=RequestContext(request)
-    )
+    kwargs['year'] = year is None and posts[0].date_modified.year or year
+    kwargs['date_field'] = 'date_modified'
+    kwargs['queryset'] = posts
+    kwargs['make_object_list'] = True
+    kwargs['allow_empty'] = True
 
-def post_archive_year(request, year=None):
-    posts = Post.objects.all()
-
-    if not year:
-        year = posts[0].date_modified.year
-
-    return date_based.archive_year(
-        request = request,
-        year = year,
-        date_field = 'date_modified',
-        queryset = posts,
-        make_object_list = True,
-  )
-
-def post(request, post_id):
-    post = Post.objects.get(id=artigo_id)
-    return render_to_response('planeta/post.html', locals())
+    return date_based.archive_year(request, *args, **kwargs)
