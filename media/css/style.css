@@ -339,14 +339,6 @@ div.single_article{
 	width:300px;
 }
 
-.small_hidden{
-	float:left;
-	height:70px;
-	margin:5px 1em .5em 0;
-	overflow:hidden;
-	width:70px;
-}
-
 
 /*twitter bird*/
 
@@ -433,3 +425,35 @@ p.credits{
 	border-bottom:1px solid black;
 }
 
+#article_navigation{
+clear:both
+}
+
+#article_navigation ul li{
+display:inline;
+margin-right:2em;
+}
+
+#languages{
+border:1px solid black;
+height:52px;
+float:right;
+width:297px;
+margin-bottom:20px;
+}
+
+#languages form{
+padding:1em;
+}
+
+#languages form select{
+float:left;
+}
+
+#languages form input{
+float:left;
+}
+
+.article p img, .old_article p img{
+display:none;
+}
