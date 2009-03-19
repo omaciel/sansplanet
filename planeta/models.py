@@ -145,6 +145,12 @@ class Post(models.Model):
         blank=True
     )
 
+    date_created = models.DateTimeField(
+        _("Date Created"),
+        null=True,
+        blank=True
+    )
+
     date_modified = models.DateTimeField(
         _("Date Modified"),
         null=True,
@@ -163,15 +169,11 @@ class Post(models.Model):
     )
 
     #tags = models.ManyToManyField(Tag, verbose_name=_('tags'))
-    date_created = models.DateField(
-        _("Date Created"),
-        auto_now_add=True
-    )
 
     class Meta:
         verbose_name = 'post'
         verbose_name_plural = 'posts'
-        ordering = ('-date_modified',)
+        ordering = ('-date_created', '-date_modified',)
         unique_together = (('feed', 'guid'),)
 
     def __unicode__(self):

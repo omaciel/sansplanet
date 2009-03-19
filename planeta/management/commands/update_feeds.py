@@ -14,6 +14,12 @@ import feedparser
 
 USER_AGENT = 'sansplanet'
 
+def timestruct_to_datetime(date):
+    """
+    Converts time_struct to datetime.
+    """
+    return datetime.datetime.fromtimestamp(time.mktime(date))
+
 def fetch_feed(feed):
 
     channel = None
@@ -46,7 +52,7 @@ def process_feed(feed):
         feed.etag = ''
 
     try:
-        feed.last_modified = datetime.datetime.fromtimestamp(time.mktime(channel.modified))
+        feed.last_modified = timestruct_to_datetime(channel.modified)
     except:
         feed.last_modified = None
 
@@ -94,12 +100,16 @@ def process_entries(feed, channel):
             content = entry.get('summary',
                 entry.get('description', ''))
 
-        if 'modified_parsed' in entry and entry.modified_parsed is not None:
-            date_modified = datetime.datetime.fromtimestamp(time.mktime(entry.modified_parsed))
+        if 'published_parsed' in entry and entry.published_parsed is not None:
+            date_created = timestruct_to_datetime(entry.published_parsed)
+        else:
+            date_created = datetime.datetime.now()
+
+        if 'updated_parsed' in entry and entry.updated_parsed is not None:
+            date_modified = timestruct_to_datetime(entry.updated_parsed)
         else:
             date_modified = datetime.datetime.now()
 
-        #fcat = self.get_tags()
         comments = entry.get('comments', '')
 
         from planeta.models import Post
@@ -116,6 +126,7 @@ def process_entries(feed, channel):
         post.title=title
         post.link=link
         post.content=content
+        post.date_created=date_created
         post.date_modified=date_modified
         post.guid=guid
         post.comments=comments
