@@ -6,33 +6,48 @@
 
     {% if object_list %}
 
-        {% for post in object_list|slice:":1" %}
+        {% if not page_obj.has_previous %}
+            {% for post in object_list|slice:":1" %}
 
-            <div id="featured_article">
-                <h2><a href="#">{{ post.title|upper }}</a></h2>
-                <p>{{ post.content|safe|truncatewords_html:"140" }}</p>
-                <p class="more"><a href="/post/{{ post.id }}">{% trans "Read More" %}</a></p>
-            </div>
-        {% endfor %}
+                <div id="featured_article">
+                    <h2>{{ post.title|upper }}</h2>
+                    <p>{{ post.content|safe|truncatewords_html:"140" }}</p>
+                    <p class="more"><a href="/post/{{ post.id }}">{% trans "Read More" %}</a></p>
+                </div>
+            {% endfor %}
 
-        <div id="col_1">
-            <ul id="articles_list">
-                {% for post in object_list|slice:"1:6" %}
-                    <li class="article">
-                        <h2><a href="#">{{ post.title|upper }}</a></h2>
-                        <p>{{ post.content|safe|truncatewords_html:"50" }}</p>
-                        <p class="more"><a href="/post/{{ post.id }}">{% trans "Read More" %}</a></p>
-                    </li>
-                {% endfor %}
+            <div id="col_1">
+                <ul id="articles_list">
+                    {% for post in object_list|slice:"1:6" %}
+                        <li class="article">
+                            <h2>{{ post.title|upper }}</h2>
+                            <p>{{ post.content|safe|truncatewords_html:"50" }}</p>
+                            <p class="more"><a href="/post/{{ post.id }}">{% trans "Read More" %}</a></p>
+                        </li>
+                    {% endfor %}
 
-            </ul><!-- end article_list-->
-        </div><!-- col_1 -->
+                </ul><!-- end article_list-->
+            </div><!-- col_1 -->
+        {% else %}
+            <div id="col_1">
+                <ul id="articles_list">
+                    {% for post in object_list|slice:":6" %}
+                        <li class="article">
+                            <h2>{{ post.title|upper }}</h2>
+                            <p>{{ post.content|safe|truncatewords_html:"50" }}</p>
+                            <p class="more"><a href="/post/{{ post.id }}">{% trans "Read More" %}</a></p>
+                        </li>
+                    {% endfor %}
+
+                </ul><!-- end article_list-->
+            </div><!-- col_1 -->
+        {% endif %}
 
         <div id="col_2">
             <ul id="old_articles_list">
                 {% for post in object_list|slice:"7:" %}
                     <li class="article">
-                        <h3><a href="#">{{ post.title|upper }}</a></h3>
+                        <h3>{{ post.title|upper }}</h3>
                         <p>{{ post.content|safe|truncatewords_html:"50" }}</p>
                         <p class="more"><a href="/post/{{ post.id }}">{% trans "Read More" %}</a></p>
                     </li>
