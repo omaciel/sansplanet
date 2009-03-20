@@ -91,6 +91,7 @@ TEMPLATE_DIRS = (
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.auth',
     'planeta.context_processors.sansplanet_info',
+    'planeta.context_processors.authors_list',
 )
 
 INSTALLED_APPS = (

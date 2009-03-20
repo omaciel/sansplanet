@@ -1,15 +1,14 @@
 <div id="authors" class="grid_2">
     <h3>Authors</h3>
+    {% if AUTHORS %}
     <ul>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
+        {% for author in AUTHORS %}
+            <li><a href="#">{{ author.author_name }}</a></li>
+        {% endfor %}
     </ul>
+
     <p class="more">
         <a href="#">View All.</a>
     </p>
+    {% endif %}
 </div><!--end authors_list-->
