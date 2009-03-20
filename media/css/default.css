@@ -1,0 +1,181 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dd,dl,dt,li,ol,ul,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;font-weight:normal;font-style:normal;text-align:left;font-family:inherit;}table{border-collapse:collapse;border-spacing:0;}ol,ul{list-style:none;}q:before,q:after,blockquote:before,blockquote:after{content:"";}
+
+/* =container */
+
+/*background:#f1f4fa;*/
+
+html, #container{
+position:relative;
+}
+
+
+/* =p */
+p{
+font-family:Baskerville, Times New Roman, Times, serif;
+line-height:1.2em;
+margin-bottom:.4em;
+}
+
+/*titles & links */
+a{
+text-decoration: none;
+}
+
+a:hover{
+text-decoration:underline;
+}
+
+a,h1 a,h2 a,h3 a,h4 a,h5 a{
+color:#163558;
+}
+
+h1,h2,h3,h4,h5,h6,
+h1 a,h2 a,h3 a,h4 a,h5 a{
+font-family:Impact, Haettenschweiler, Arial Narrow Bold, sans-serif;
+margin-bottom:.4em;
+}
+
+
+/* =branding */
+#branding{
+margin-top:20px;
+}
+#branding h1{
+background:url(../images/sansplane_logo338x85.jpg)no-repeat;
+width: 338px;
+height: 85px;
+text-indent: -9999px;
+oveflow:hidden;
+margin:auto
+}
+
+/* =today */
+#today p{
+widows: 100%;
+text-align: center;
+margin-bottom:20px;
+}
+
+/* =main_navigation */
+
+#main_options{
+background:black url(../image/sansplanet_earth_156x100.jpg)no-repeat;
+background-position: center;
+margin-bottom: 20px;
+
+}
+
+#main_navigation{
+height:100px;
+}
+
+
+#main_navigation ul{
+float:left;
+margin-left:20px
+}
+
+#main_navigation ul li{
+display:inline;
+line-height:100px;
+}
+
+#main_navigation ul li a{
+color:#fff;
+margin-right:10px;
+}
+
+#main_navigation ul li a:hover{
+color:gray
+}
+
+/* =search_form */
+input.input_text{
+position:relative;
+top:40px;
+left:170px;
+}
+
+input.buttom{
+position:relative;
+top:40px;
+left:180px;
+}
+
+
+
+/* =main_content */
+#main_content{
+
+}
+
+
+/* =authors */
+#authors{
+background:#f1f4fa;
+height:430px;
+}
+
+#authors h3, #authors ul{
+	padding:10px;
+}
+
+/* =about */
+#about{
+background:#f1f4fa;
+font-size:80%;
+height:430px;
+}
+
+#about h3, #about p{
+padding:10px;
+}
+
+
+/* =website_information */
+#website_information{
+clear:both;
+}
+
+
+/* =featured_article*/
+li#featured_article{
+border:1px solid black;
+}
+
+li#featured_article h2{
+font-size:1.8em;
+}
+
+li#featured_article p{
+font-size:1.2em;}
+
+li#featured_article h2, li#featured_article p{
+padding:10px 10px 0 10px;
+}
+
+/* =article */
+li.article{
+margin-bottom:20px;
+}
+
+
+/* =more */
+
+p.more{
+text-align: right;
+margin-right:10px;
+}
+
+
+/* =spacer */
+.spacer{
+	margin-bottom:20px;
+}
+
+
+#website_information p{
+text-align: center;
+margin-top:20px;
+padding-bottom:2em;
+}
