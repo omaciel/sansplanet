@@ -30,7 +30,6 @@ urlpatterns = patterns('',
     url(r'^$', 'planeta.views.post_list', name='home'),
     url(r'^page/(?P<page>[0-9]+)/$', 'planeta.views.post_list'),
     url(r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': feeds}),
-    (r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^archives/?(?P<year>\d{4})?/?$', 'planeta.views.post_archive_year', name='archives'),
 )
 

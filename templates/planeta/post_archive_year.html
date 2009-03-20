@@ -1,11 +1,10 @@
 {% extends "base.html" %}
-{% load i18n %}
 {% block main_content %}
 	<div id="main_content">
 	
 	<div class="session">
-        <h2 class="title">{% trans "Archives" %}</h2>
-        <p>{% trans "See our older news" %}</p>
+        <h2 class="title">Archives</h2>
+        <p>See our older news</p>
 	</div><!--end session-->
 	
     {% for date in date_list %}
@@ -16,7 +15,7 @@
         <li class="article">
         <h2><a href="#">{{ post.title }}</a></h2>
         <p>{{ post.content|safe|truncatewords_html:"50" }}</p>
-        <p class="more"><a href="/post/{{ post.id }}">{% trans "Read More" %}</a></p>
+        <p class="more"><a href="/post/{{ post.id }}">Read More</a></p>
         </li>
         {% endifequal %}
     {% endfor %}

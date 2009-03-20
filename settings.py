@@ -92,6 +92,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.auth',
     'planeta.context_processors.sansplanet_info',
     'planeta.context_processors.authors_list',
+    'planeta.context_processors.post_year_list',
 )
 
 INSTALLED_APPS = (
