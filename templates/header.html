@@ -1,11 +1,10 @@
-{% block head %}
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <script type="text/javascript" src="/media/js/jquery-1.2.6.min.js"></script>
-
-    <link rel="stylesheet" href="/media/css/style.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
-    <link rel="alternate" type="application/rss+xml" title="Planeta GNU/Linux Brasil" href="/feeds/rss/" />
-    <link rel="alternate" type="application/rss+xml" title="Planeta GNU/Linux Brasil" href="/feeds/atom/" />
-    {% block title %}<title>Planeta GNU/Linux Brasil</title>{% endblock %}
+    <title>{{ PLANET_NAME }}</title>
+    <link rel="stylesheet" type="text/css" media="all" href="/media/css/reset.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="/media/css/text.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="/media/css/960.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="/media/css/default.css" />
+    <link rel="alternate" type="application/rss+xml" title="{{ PLANET_NAME }}" href="/feeds/rss/" />
+    <link rel="alternate" type="application/rss+xml" title="{{ PLANET_NAME }}" href="/feeds/atom/" />
 </head>
-{% endblock %}

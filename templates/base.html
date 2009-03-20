@@ -1,36 +1,30 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" 
     "http://www.w3.org/TR/html4/strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
 {% include "header.html" %}
+
 <body>
-    {% block header %}
-    <div id="container">
-        <div id="branding">
-            <h1><a href="{{ PLANET_URL  }}">{{ PLANET_NAME }}</a></h1>
-        </div><!--end branding-->
+    <div class="container_16 spacer" id="sansplanet">
 
-        <div id="date">
-            <p>{% now "jS F Y H:i" %}</p>
-        </div><!--end date-->
+        {% include "top.html" %}
 
-        {% endblock %}
 
-        {% include "ads.html" %}
         {% include "navigation.html" %}
+
+        <div class="clear"></div>
 
         {% block main_content %}{% endblock %}
 
+        {% include "authors.html" %}
 
-        {% block extra_main_content %}{% endblock %}
+        {% include "about.html" %}
 
-        {% include "sidebar.html" %}
+        <div class="clear"></div>
 
-    </div><!--end container-->
-    {% block footer %}
-    <div id="website_information">
-        <p>{{ PLANET_NAME }}. Website by: <a href="http://www.quartostudio.com">QuartoEstudio.com</a></p>
-    </div><!--end website_information-->
-    {% endblock %}
+        {% include "footer.html" %}
+
+    </div><!--end container_16-->
 
 </body>
 </html>

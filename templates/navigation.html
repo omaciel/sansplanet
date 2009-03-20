@@ -1,11 +1,14 @@
-{% load i18n %}
+<div id="main_options" class="grid_16">
+    <div id="main_navigation" class="grid_8 alpha">
+        <ul>
+            <li><a href="{% url home %}">HOME</a></li>
+            <li><a href="{% url archives %}">ARCHIVES</a></li>
+            <li><a href="#">CONTACT</a></li>
+            <li><a href="#">TAGS</a></li>
+            <li><a href="#">AUTHORS</a></li>
+        </ul>
+    </div><!--end main_navigation-->
 
-<div id="main_navigation">
-    <ul>
-        <li><a href="{% url home %}">{% trans "HOME" %}</a></li>
-        <li><a href="{% url archives %}">{% trans "ARCHIVES" %}</a></li>
-        <li><a href="#">{% trans "CONTACT" %}</a></li>
-        <li><a href="#">{% trans "TAGS" %}</a></li>
-        <li><a href="#">{% trans "AUTHORS" %}</a></li>
-    </ul>
-</div><!--end main_navigation-->
+    {% include "search.html" %}
+
+</div><!--end main_options-->
