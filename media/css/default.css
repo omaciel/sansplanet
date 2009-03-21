@@ -2,10 +2,9 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 /* =container */
 
-/*background:#f1f4fa;*/
-
 html, #container{
 position:relative;
+background:#fff;
 }
 
 
@@ -27,6 +26,7 @@ text-decoration:underline;
 
 a,h1 a,h2 a,h3 a,h4 a,h5 a{
 color:#163558;
+font-weight:bold;
 }
 
 h1,h2,h3,h4,h5,h6,
@@ -40,12 +40,13 @@ margin-bottom:.4em;
 #branding{
 margin-top:20px;
 }
-#branding h1{
+#branding h1 a{
+display:block;
 background:url(../images/sansplane_logo338x85.jpg)no-repeat;
 width: 338px;
 height: 85px;
 text-indent: -9999px;
-oveflow:hidden;
+overflow:hidden;
 margin:auto
 }
 
@@ -59,7 +60,7 @@ margin-bottom:20px;
 /* =main_navigation */
 
 #main_options{
-background:black url(../image/sansplanet_earth_156x100.jpg)no-repeat;
+background:black url(../images/sansplanet_earth_156x100.jpg)no-repeat;
 background-position: center;
 margin-bottom: 20px;
 
@@ -90,47 +91,73 @@ color:gray
 }
 
 /* =search_form */
-input.input_text{
-position:relative;
-top:40px;
-left:170px;
-}
 
-input.buttom{
-position:relative;
-top:40px;
-left:180px;
+#search_content{
+	display:block;
+	position:relative;
+	float:right;
+	top:40px;
+	left:-20px;
+	
 }
-
 
 
 /* =main_content */
-#main_content{
-
+#main_content ul li p img{
+display:none;
 }
 
 
 /* =authors */
 #authors{
 background:#f1f4fa;
-height:430px;
+padding-bottom:10px;
+margin-top:20px;
 }
 
 #authors h3, #authors ul{
 	padding:10px;
 }
 
+#authors ul{
+	margin-left:15px;
+}
+
+#authors ul li{
+	list-style:disc;
+}
+
 /* =about */
 #about{
 background:#f1f4fa;
 font-size:80%;
-height:430px;
+padding-bottom:10px;
 }
 
-#about h3, #about p{
+
+
+#about h3, #about p, #about ul{
 padding:10px;
 }
 
+/* =archives */
+#archives{
+	margin-top:20px;
+	background:#f1f4fa;
+	padding-bottom:10px;
+}
+
+#archives h3, #archives ul{
+	padding:10px;
+}
+
+#archives ul{
+	margin-left:15px;
+}
+
+#archives ul li{
+	list-style:disc;
+}
 
 /* =website_information */
 #website_information{
@@ -179,3 +206,62 @@ text-align: center;
 margin-top:20px;
 padding-bottom:2em;
 }
+
+/*=article_information*/
+
+.article_info{
+margin:10px 0 20px 0;
+padding:5px 0;
+border-top:1px solid black;
+border-bottom:1px solid black;
+}
+
+
+.article_info p{
+margin:0 0;
+padding:0 0;
+}
+
+
+
+/* =single_article */
+
+#single_article p img{
+float:left;
+border:1px solid gray;
+margin:10px 20px 10px 0;
+
+}
+
+
+#single_article ul li, #single_article ol li{
+	margin:0 0 0 40px;
+}
+
+#single_article ul li{
+	list-style:disc;
+}
+
+#single_article ol li{
+	list-style:decimal;
+}
+
+#single_article blockquote{
+	border:1px solid black;
+	margin:10px;
+	padding:10px;
+	font-size:1.5em;
+}
+
+#single_article code{
+	display:block;
+	margin:10px;
+	padding:10px;
+	font-size:80%;
+	letter-spacing:.08em;
+	font-family:courier;
+	background:gray;
+	color: #fff;
+}
+
+/*background:#f1f4fa;*/
