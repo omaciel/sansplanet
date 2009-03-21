@@ -1,25 +1,24 @@
 {% extends "base.html" %}
 {% block main_content %}
-	<div id="main_content">
-	
-	<div class="session">
-        <h2 class="title">Archives</h2>
-        <p>See our older news</p>
-	</div><!--end session-->
-	
-    {% for date in date_list %}
-    <h2 class="date">{{ date|date:"F" }}</h2>
-    <ul class="arquives">
+    <div id="main_content" class="grid_10">
+        <ul>
         {% for post in object_list %}
-        {% ifequal post.date_modified.month date.month %}
-        <li class="article">
-        <h2><a href="#">{{ post.title }}</a></h2>
-        <p>{{ post.content|safe|truncatewords_html:"50" }}</p>
-        <p class="more"><a href="/post/{{ post.id }}">Read More</a></p>
-        </li>
-        {% endifequal %}
-    {% endfor %}
-</ul><!--archives-->
-{% endfor %}
-</div><!--end main_content-->
+            <li class="article">
+                <h2>{{ post.title }}</h2>
+                <div class="article_info">
+                    <p class="article_date">
+                        <span class="article_date">Date: </span>{{ post.date_modified|date:"D d M Y"}}.
+                    </p>
+                    <p>
+                       <span class="author_title">Author: </span>
+                       <a href="{{ post.feed.site_url }}">{{ post.feed.author }}</a>
+                    </p>
+                    <p class="original_article_link">
+                        <a href="/post/{{ post.id }}">Read article</a>
+                    </p>
+                </div><!-- end article_info -->
+            </li><!--end article-->
+        {% endfor %}
+        </ul>
+    </div><!--end main_content-->
 {% endblock %}

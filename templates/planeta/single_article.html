@@ -1,12 +1,21 @@
 {% extends "base.html" %}
-{% load i18n %}
 {% block main_content %}
-<div id="main_content">
-    <div class="single_article">
+<div id="main_content" class="grid_10">
+    <div div class="single_article">
         <h2>{{ object.title }}</h2>
-        <p class="credit">{% trans "Writen by: " %}<a href="{{ object.feed.site_url }}">{{ object.feed.author }}</a></p>
-        {{ object.content|safe }}
+        <div class="article_info">
+            <p class="original_article_link">
+                <a href="{{ object.link }}">Link to original article</a>
+            </p>
+            <p class="article_date">
+                <span class="article_date">Date: </span>{{ object.date_modified|date:"D d M Y"}}.
+            </p>
+            <p>
+               <span class="author_title">Author: </span>
+               <a href="{{ object.feed.site_url }}">{{ object.feed.author }}</a>
+            </p>
+        </div><!-- end article_info -->
+        <p>{{ object.content|safe }}</p>
     </div><!--end single_article-->
-    <!--<p class="author_website"><a href="{{ object.feed.site_url }}">{% trans "Visit the author's website." %}</a></p>-->
 </div><!--end main_content-->
 {% endblock %}
