@@ -1,11 +1,5 @@
-<div id="about" class="grid_4">
+<div id="about" class="grid_6">
     <h3>About This Planet</h3>
     <p>SansPlanet is a blog aggregator written in Django.</p>
     <p>Visit our web site for more information.</p>
-    <h3>Archives:</h3>
-    <ul>
-    {% for year in ARCHIVES_YEAR_LIST %}
-        <li><a href={% url archives %}/{{ year}}>{{ year}}</a></li>
-    {% endfor %}
-    </ul>
 </div><!--end about-->

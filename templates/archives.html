@@ -1,0 +1,8 @@
+<div id="archives" class="grid_3 omega">
+    <h3>Archives:</h3>
+    <ul>
+    {% for year in ARCHIVES_YEAR_LIST %}
+        <li><a href={% url archives %}/{{ year}}>{{ year}}</a></li>
+    {% endfor %}
+    </ul>
+</div><!-- end archives -->

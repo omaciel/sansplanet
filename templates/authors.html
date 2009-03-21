@@ -1,14 +1,11 @@
-<div id="authors" class="grid_2">
-    <h3>Authors</h3>
-    {% if AUTHORS %}
-    <ul>
-        {% for author in AUTHORS %}
-            <li><a href="#">{{ author.author_name }}</a></li>
-        {% endfor %}
-    </ul>
+    <div id="authors" class="grid_3 alpha">
+        <h3>Authors</h3>
+        {% if AUTHORS %}
+        <ul>
+            {% for author in AUTHORS %}
+                <li><a href="#">{{ author.author_name }}</a></li>
+            {% endfor %}
+        </ul>
 
-    <p class="more">
-        <a href="#">View All.</a>
-    </p>
-    {% endif %}
-</div><!--end authors_list-->
+        {% endif %}
+    </div><!--end authors-->
