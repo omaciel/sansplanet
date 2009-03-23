@@ -264,4 +264,21 @@ margin:10px 20px 10px 0;
 	color: #fff;
 }
 
+
+/* =authors_list */
+
+li.author_id{
+	border-bottom:1px solid black;
+	margin-bottom:20px;
+	padding-bottom:10px;
+}
+
+li.author_id img{
+	float:left;
+	margin:10px 10px 10px 0;
+}
+
+span.author_title{
+	font-weight:bold;
+}
 /*background:#f1f4fa;*/
