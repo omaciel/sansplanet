@@ -29,7 +29,7 @@ def post_archive_year(request, year=None, *args, **kwargs):
 def feed_list(request, author_id=None, *args, **kwargs):
     if not author_id:
         feeds = Feed.objects.all()
-    else
+    else:
         try:
             feeds = Feed.objects.filter(id=author_id)
         except Exception, e:
