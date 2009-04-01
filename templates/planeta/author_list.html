@@ -5,19 +5,27 @@
 
     {% if object_list %}
 
+        <div id="authors_list">
         <ul>
         {% for feed in object_list %}
-            <li class="article">
+            <li class="author_id">
                 <h2>{{ feed.author.author_name }}</h2>
-                <div class="article_info">
-                    <p>
-                       <span class="author_title">Feed: </span>
-                       <a href="{{ feed.feed_url }}">{{ feed.feed_title }}</a>
-                    </p>
-                </div><!-- end article_info -->
-            </li><!--end article-->
+                {% if feed.author.gotchi %}
+                    <img src="{{ feed.author.gotchi" />
+                {% else %}
+                    <img src="{{ default_avatar }}" />
+                {% endif %}
+                <p>
+                    <span class="author_title">Bio:</span>
+                </p>
+                <p>
+                    <span class="author_title">Website:</span>
+                    <a href="{{ feed.feed_url }}">{{ feed.feed_title }}</a>
+                <p>
+            </li><!--end author_id-->
         {% endfor %}
         </ul>
+        </div><!--end authors_list -->
     {% endif %}
     </div><!--end main_content-->
 

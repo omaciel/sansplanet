@@ -37,5 +37,6 @@ def authors_list(request, author_id=None, *args, **kwargs):
 
     kwargs['queryset'] = feeds
     kwargs['template_name'] = 'planeta/author_list.html'
+    kwargs['extra_context'] = {'default_avatar': settings.MEDIA_URL + 'images/default.png'}
 
     return list_detail.object_list(request, *args, **kwargs)
