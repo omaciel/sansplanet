@@ -6,7 +6,7 @@ from django.shortcuts import render_to_response
 from django.views.generic import date_based, list_detail
 from django.shortcuts import render_to_response
 
-from models import Post
+from models import Feed, Post
 
 def post_list(request, page=0, *args, **kwargs):
     kwargs['paginate_by'] = settings.PAGINATE_BY
@@ -26,7 +26,7 @@ def post_archive_year(request, year=None, *args, **kwargs):
 
     return date_based.archive_year(request, *args, **kwargs)
 
-def feed_list(request, author_id=None, *args, **kwargs):
+def authors_list(request, author_id=None, *args, **kwargs):
     if not author_id:
         feeds = Feed.objects.all()
     else:
@@ -35,6 +35,7 @@ def feed_list(request, author_id=None, *args, **kwargs):
         except Exception, e:
             feeds = []
 
-    kwargs['queryset'] =feeds 
+    kwargs['queryset'] = feeds
+    kwargs['template_name'] = 'planeta/author_list.html'
 
     return list_detail.object_list(request, *args, **kwargs)

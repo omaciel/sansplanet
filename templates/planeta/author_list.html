@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block main_content %}
+
+    <div id="main_content" class="grid_10">
+
+    {% if object_list %}
+
+        <ul>
+        {% for feed in object_list %}
+            <li class="article">
+                <h2>{{ feed.author.author_name }}</h2>
+                <div class="article_info">
+                    <p>
+                       <span class="author_title">Feed: </span>
+                       <a href="{{ feed.feed_url }}">{{ feed.feed_title }}</a>
+                    </p>
+                </div><!-- end article_info -->
+            </li><!--end article-->
+        {% endfor %}
+        </ul>
+    {% endif %}
+    </div><!--end main_content-->
+
+{% endblock %}
