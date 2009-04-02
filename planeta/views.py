@@ -33,6 +33,13 @@ def post_archive_year(request, year=None, *args, **kwargs):
 
     return date_based.archive_year(request, *args, **kwargs)
 
+def author(request, *args, **kwargs):
+    kwargs['queryset'] = Feed.objects.filter(id=kwargs['object_id'])
+    kwargs['template_name'] = 'planeta/single_author.html'
+    kwargs['extra_context'] = {'default_avatar': settings.MEDIA_URL + 'images/default.png'}
+
+    return list_detail.object_detail(request, *args, **kwargs)
+
 def authors_list(request, author_id=None, *args, **kwargs):
     if not author_id:
         feeds = Feed.objects.all()

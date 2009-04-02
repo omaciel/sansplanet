@@ -3,7 +3,7 @@
         {% if AUTHORS %}
         <ul>
             {% for author in AUTHORS %}
-                <li><a href="#">{{ author.author_name }}</a></li>
+                <li><a href="/author/{{ author.id }}">{{ author.author_name }}</a></li>
             {% endfor %}
         </ul>
 

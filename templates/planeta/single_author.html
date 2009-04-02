@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block main_content %}
+
+    <div id="main_content" class="grid_10">
+
+    {% if object %}
+
+        <div id="authors_list">
+        <ul>
+            <li class="author_id">
+                <h2>{{ object.author.author_name }}</h2>
+                {% if object.author.gotchi %}
+                    <img src="{{ object.author.gotchi" />
+                {% else %}
+                    <img src="{{ default_avatar }}" />
+                {% endif %}
+                <p>
+                    <span class="author_title">Bio:</span>
+                </p>
+                <p>
+                    <span class="author_title">Website:</span>
+                    <a href="{{ object.feed_url }}">{{ object.feed_title }}</a>
+                <p>
+            </li><!--end author_id-->
+        </ul>
+        </div><!--end authors_list -->
+    {% endif %}
+    </div><!--end main_content-->
+
+{% endblock %}
