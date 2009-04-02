@@ -1,6 +1,5 @@
 from django.db import models
 from django.conf import settings
-from django.utils.translation import ugettext_lazy as _
 
 # Social Networks
 TWITTER = 'twitter'
@@ -18,26 +17,26 @@ SOCIAL_NETWORKS_URLS = {
 
 class SocialNetwork(models.Model):
     network_name = models.CharField(
-        _("Network Name"), 
-        max_length=50, 
+        "Network Name",
+        max_length=50,
         choices=SOCIAL_NETWORKS_NAMES
     )
 
     user_name = models.CharField(
-        _("User Name"),
-        max_length=50, 
-        null=False, 
+        "User Name",
+        max_length=50,
+        null=False,
         blank=False
     )
 
     url = models.URLField(
-        _("Network URL"),
+        "Network URL",
         null=True,
         blank=True
     )
 
     icon = models.ImageField(
-        _("Network Icon"),
+        "Network Icon",
         null=True,
         blank=True,
         upload_to='icons'
@@ -52,22 +51,28 @@ class SocialNetwork(models.Model):
 
 class Author(models.Model):
     author_name = models.CharField(
-        _("Author Name"),
+        "Author Name",
         max_length=50,
         blank=True
     )
 
     author_email = models.EmailField(
-        _("Email"),
+        "Email",
+        blank=True
+    )
+
+    biography = models.TextField(
+        "Short biography about the author.",
+        null=True,
         blank=True
     )
 
     gotchi = models.ImageField(
-        _("Avatar"),
+        "Avatar",
         null=True,
         blank=True,
         upload_to=settings.AVATAR_LOCATION,
-        help_text=_("URL to an image file (.jpg, .png, ...) of a hackergotchi")
+        help_text="URL to an image file (.jpg, .png, ...) of a hackergotchi"
     )
 
     network = models.ManyToManyField(
@@ -79,6 +84,9 @@ class Author(models.Model):
     def __unicode__(self):
         return self.author_name
 
+    class Meta:
+        ordering = ('-author_name',)
+
 class Feed(models.Model):
     author = models.ForeignKey(
         Author,
@@ -87,26 +95,26 @@ class Feed(models.Model):
     )
 
     feed_title = models.CharField(
-        _("Feed Title"),
+        "Feed Title",
         max_length=200,
         blank=True
     )
 
     site_url = models.URLField(
-        _("Site URL"),
+        "Site URL",
         blank=True,
-        help_text=_("URL for the web site")
+        help_text="URL for the web site"
     )
 
     feed_url = models.URLField(
-        _("Feed URL"),
+        "Feed URL",
         unique=True,
-        help_text=_("URL for the news feed")
+        help_text="URL for the news feed"
     )
 
     is_active = models.BooleanField(
         default=True,
-        help_text=_("If disabled, this feed will not longer be updated.")
+        help_text="If disabled, this feed will not longer be updated."
     )
 
     # http://feedparser.org/docs/http-etag.html
@@ -117,7 +125,7 @@ class Feed(models.Model):
     class Meta:
         verbose_name = 'feed'
         verbose_name_plural = 'feeds'
-        ordering = ('feed_title', 'feed_url',)
+        ordering = ('-author', '-feed_title',)
 
     def __unicode__(self):
         return u'%s (%s)' % (self.feed_title, self.author.author_name)
@@ -134,37 +142,37 @@ class Post(models.Model):
     )
 
     title = models.CharField(
-        _("Title"),
+        "Title",
         max_length=255
     )
 
-    link = models.URLField(_("Link"))
+    link = models.URLField("Link")
 
     content = models.TextField(
-        _("Content"),
+        "Content",
         blank=True
     )
 
     date_created = models.DateTimeField(
-        _("Date Created"),
+        "Date Created",
         null=True,
         blank=True
     )
 
     date_modified = models.DateTimeField(
-        _("Date Modified"),
+        "Date Modified",
         null=True,
         blank=True
     )
 
     guid = models.CharField(
-        _("GUID"),
+        "GUID",
         max_length=200,
         db_index=True
     )
 
     comments = models.URLField(
-        _("Comments"),
+        "Comments",
         blank=True
     )
 

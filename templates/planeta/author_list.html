@@ -11,12 +11,13 @@
             <li class="author_id">
                 <h2>{{ feed.author.author_name }}</h2>
                 {% if feed.author.gotchi %}
-                    <img src="{{ feed.author.gotchi" />
+                    <img src="/media/{{ feed.author.gotchi}}" />
                 {% else %}
                     <img src="{{ default_avatar }}" />
                 {% endif %}
                 <p>
                     <span class="author_title">Bio:</span>
+                    {{ feed.author.biography|safe }}
                 </p>
                 <p>
                     <span class="author_title">Website:</span>
