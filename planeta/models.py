@@ -173,7 +173,7 @@ class Post(models.Model):
     class Meta:
         verbose_name = 'post'
         verbose_name_plural = 'posts'
-        ordering = ('-date_created', '-date_modified',)
+        ordering = ('-date_modified',)
         unique_together = (('feed', 'guid'),)
 
     def __unicode__(self):
