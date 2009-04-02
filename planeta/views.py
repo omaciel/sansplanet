@@ -40,16 +40,8 @@ def author(request, *args, **kwargs):
 
     return list_detail.object_detail(request, *args, **kwargs)
 
-def authors_list(request, author_id=None, *args, **kwargs):
-    if not author_id:
-        feeds = Feed.objects.all()
-    else:
-        try:
-            feeds = Feed.objects.filter(id=author_id)
-        except Exception, e:
-            feeds = []
-
-    kwargs['queryset'] = feeds
+def authors_list(request, *args, **kwargs):
+    kwargs['queryset'] = Feed.objects.all()
     kwargs['template_name'] = 'planeta/author_list.html'
     kwargs['extra_context'] = {'default_avatar': settings.MEDIA_URL + 'images/default.png'}
 
