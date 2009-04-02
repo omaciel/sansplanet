@@ -10,7 +10,6 @@ from django.conf import settings
 
 admin.autodiscover()
 
-from planeta.models import Post
 from planeta.feeds import RssFeed, AtomFeed
 
 feeds = {
@@ -18,15 +17,10 @@ feeds = {
     'atom': AtomFeed,
 }
 
-posts = {'queryset': Post.objects.all()}
-post = {'queryset': Post.objects.all(),
-        'template_name': 'planeta/single_article.html',
-}
-
 urlpatterns = patterns('',
     url(r'^admin/(.*)', admin.site.root),
-    url(r'^post/$', object_list, posts, name='posts'),
-    url(r'^post/(?P<object_id>\d+)/$', object_detail, post, name='post'),
+    url(r'^post/$', 'planeta.views.post_list'),
+    url(r'^post/(?P<object_id>\d+)/$', 'planeta.views.post', name='post'),
     url(r'^authors/$', 'planeta.views.authors_list', name='authors'),
     url(r'^$', 'planeta.views.post_list', name='home'),
     url(r'^page/(?P<page>[0-9]+)/$', 'planeta.views.post_list'),

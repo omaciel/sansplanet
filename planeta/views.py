@@ -8,6 +8,13 @@ from django.shortcuts import render_to_response
 
 from models import Feed, Post
 
+def post(request, *args, **kwargs):
+
+    kwargs['queryset'] = Post.objects.all()
+    kwargs['template_name'] = 'planeta/single_article.html'
+
+    return list_detail.object_detail(request, *args, **kwargs)
+
 def post_list(request, page=0, *args, **kwargs):
     kwargs['paginate_by'] = settings.PAGINATE_BY
     kwargs['page'] = page
