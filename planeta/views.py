@@ -10,7 +10,7 @@ from models import Feed, Post
 
 def post(request, *args, **kwargs):
 
-    kwargs['queryset'] = Post.objects.filter(feed__is_active=True)
+    kwargs['queryset'] = Post.objects.filter(is_visible=True)
     kwargs['template_name'] = 'planeta/single_article.html'
 
     return list_detail.object_detail(request, *args, **kwargs)
@@ -18,12 +18,12 @@ def post(request, *args, **kwargs):
 def post_list(request, page=0, *args, **kwargs):
     kwargs['paginate_by'] = settings.PAGINATE_BY
     kwargs['page'] = page
-    kwargs['queryset'] = Post.objects.filter(feed__is_active=True)
+    kwargs['queryset'] = Post.objects.filter(is_visible=True)
 
     return list_detail.object_list(request, *args, **kwargs)
 
 def post_archive_year(request, year=None, *args, **kwargs):
-    posts = Post.objects.filter(feed__is_active=True)
+    posts = Post.objects.filter(is_visible=True)
 
     kwargs['year'] = year is None and posts[0].date_modified.year or year
     kwargs['date_field'] = 'date_modified'

@@ -16,7 +16,7 @@ def sansplanet_info(request):
     }
 
 def post_year_list(request):
-    posts = Post.objects.filter(feed__is_active=True)
+    posts = Post.objects.filter(is_visible=True)
 
     years = []
 
